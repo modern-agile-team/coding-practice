@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # 한글 문제 폴더명이 8진수로 이스케이프되면 vitest --changed가 변경 파일을 못 찾는다
+      - run: git config core.quotepath false
+
+      - name: 타입 검사
+        run: npm run typecheck
+
+      - name: 변경된 문제의 테스트 실행
+        run: npx vitest run --changed origin/${{ github.base_ref }} --passWithNoTests

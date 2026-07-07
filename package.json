@@ -1,0 +1,20 @@
+{
+  "name": "coding-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Level 1~10 TypeScript 코딩 연습 문제 모음",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/practice.mjs",
+    "practice": "node scripts/practice.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@inquirer/prompts": "^8.5.0",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
