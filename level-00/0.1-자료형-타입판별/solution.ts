@@ -8,16 +8,12 @@
  * @example
  * solution(42) // => "number"
  */
-export type TypeName =
-  | "number"
-  | "string"
-  | "boolean"
-  | "array"
-  | "object"
-  | "null"
-  | "undefined";
+export type TypeName = "number" | "string" | "boolean" | "array" | "object" | "null" | "undefined";
 
 export function solution(value: unknown): TypeName {
-  // TODO: 구현하세요
-  throw new Error("아직 구현되지 않았습니다");
+  if (value === null) return "null";
+
+  if (Array.isArray(value)) return "array";
+
+  return typeof value as TypeName;
 }
