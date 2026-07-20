@@ -7,6 +7,5 @@
  * solution(1, 2) // => [2, 1]
  */
 export function solution<T>(a: T, b: T): [T, T] {
-  // TODO: 구현하세요
-  throw new Error("아직 구현되지 않았습니다");
+  return [b, a];
 }
