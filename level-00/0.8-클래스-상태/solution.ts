@@ -16,6 +16,15 @@ export interface Counter {
 }
 
 export function solution(start: number): Counter {
-  // TODO: 구현하세요
-  throw new Error("아직 구현되지 않았습니다");
+  return {
+    increment: () => {
+      start++;
+    },
+    decrement: () => {
+      start--;
+    },
+    value: () => {
+      return start;
+    }
+  }
 }
