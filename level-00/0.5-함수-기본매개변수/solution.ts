@@ -8,6 +8,5 @@
  * solution("민수") // => "안녕하세요, 민수님!"
  */
 export function solution(name: string, greeting: string = "안녕하세요"): string {
-  // TODO: 구현하세요
-  throw new Error("아직 구현되지 않았습니다");
+  return `${greeting}, ${name}님!`;
 }
