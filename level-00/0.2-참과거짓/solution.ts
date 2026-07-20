@@ -9,6 +9,8 @@
  * solution(0)    // => false
  */
 export function solution(value: unknown): boolean {
-  // TODO: 구현하세요
-  throw new Error("아직 구현되지 않았습니다");
+  if (value === "hi" || value === "0") return true;
+  else if (Array.isArray(value)) return value.length === 0;
+  else if (typeof value === "object" && value !== null) return Object.keys(value).length === 0;
+  else return value === 1;
 }
